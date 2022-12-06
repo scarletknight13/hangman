@@ -1,0 +1,8 @@
+.Board{
+    height:60vh;
+    width: 100vw;
+}
+.Board > canvas{
+    /* width: 100%;
+    height: 90%; */
+}

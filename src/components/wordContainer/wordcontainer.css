@@ -1,0 +1,7 @@
+.WordContainer{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}

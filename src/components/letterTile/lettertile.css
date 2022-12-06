@@ -1,0 +1,8 @@
+.LetterTile{
+    width: 1%;
+    font-size: 22px;
+}
+.underlined{
+    border-bottom: solid 2px black;
+
+}
