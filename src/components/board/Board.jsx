@@ -2,11 +2,10 @@ import './board.css'
 import {useRef} from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-const Board = ({wrongGuesses}) => {
+const Board = ({wrongGuesses, updateGameState}) => {
     const canvasElement = useRef(null);
     const boardElement = useRef(null);
     const ctxElement = useRef(null);
-    const [wrongGuessesCount, setWrongGuessesCount] = useState(-1);
     const startingScript = () => {
         
         canvasElement.current.width = boardElement.current.offsetWidth
@@ -93,8 +92,11 @@ const Board = ({wrongGuesses}) => {
         console.log(wrongGuesses);
         if(wrongGuesses.size <= 6 && wrongGuesses.size > 0){
             console.log('here')
-            drawings[wrongGuessesCount + 1]();
-            setWrongGuessesCount(wrongGuessesCount + 1);
+            if(wrongGuesses.size === 6){
+                // console.log('I made it');
+                updateGameState('Lost');
+            }
+            drawings[wrongGuesses.size - 1]();
         }
     }, [wrongGuesses])
     return (
